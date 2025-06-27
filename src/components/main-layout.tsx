@@ -25,15 +25,13 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
       <Sidebar collapsible="icon" variant="sidebar">
         <SidebarHeader>
           <SidebarTrigger className="md:hidden lg:inline-flex" />   {/* shows a hamburger on mobile, a chevron on desktop */}
+        </SidebarHeader>
           <div className="flex items-center gap-2 p-2">
             <Shield className="h-8 w-8 text-primary" />
-            <div className="md:hidden lg:flex items-center gap-2">
-              <div className="flex flex-col">
-                <h1 className="text-xl font-semibold tracking-tight">CyberWise</h1>
-              </div>
+            <div className="flex flex-col">
+              <h1 className="text-xl font-semibold tracking-tight">CyberWise</h1>
             </div>
           </div>
-        </SidebarHeader>
         <SidebarContent>
           <MainNav />
         </SidebarContent>
@@ -41,8 +39,8 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
           <SidebarSeparator className="mx-0 mb-1 w-full" />
           <AboutDeveloperDialog />
         </SidebarFooter>
-      </Sidebar>
-      <SidebarInset>
+
+        <SidebarInset>
         <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:h-16 sm:px-6">
           <div className="flex items-center gap-4">
             <SidebarTrigger className="md:hidden" />
@@ -56,6 +54,10 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
         <main className="flex-1 overflow-y-auto p-4 md:p-6">{children}</main>
         <Footer />
       </SidebarInset>
+
+      
+      </Sidebar>
+      
     </SidebarProvider>
   );
 }
