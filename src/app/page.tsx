@@ -103,7 +103,7 @@ export default function Home() {
             {/* SP's Card */}
             <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
               <img
-                src="https://placehold.co/150x150.png"
+                src="public\Delu.png"
                 alt={t('home.messages.sp.name')}
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-primary/50 flex-shrink-0"
                 data-ai-hint="officer portrait"
