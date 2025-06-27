@@ -12,6 +12,7 @@ import {
   Gamepad2,
   ShieldQuestion,
   GalleryHorizontal,
+  Shield,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -73,6 +74,9 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <section className="text-center py-16">
+        <div className="mb-6 flex justify-center text-primary">
+          <Shield className="h-16 w-16" />
+        </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
           <span className="text-primary">{t('home.hero.title2')}</span>
@@ -89,6 +93,47 @@ export default function Home() {
           <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
             <Link href="/chat">{t('home.hero.cta2')}</Link>
           </Button>
+        </div>
+      </section>
+
+      <section className="py-12 bg-card">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10">{t('home.messages.title')}</h2>
+          <div className="grid grid-cols-1 gap-10 max-w-4xl mx-auto">
+            {/* SP's Card */}
+            <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
+              <img
+                src="https://placehold.co/150x150.png"
+                alt={t('home.messages.sp.name')}
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-primary/50 flex-shrink-0"
+                data-ai-hint="officer portrait"
+              />
+              <div>
+                <h3 className="text-xl font-bold">{t('home.messages.sp.name')}</h3>
+                <p className="text-sm text-primary font-semibold mb-2">{t('home.messages.sp.title')}</p>
+                <p className="text-muted-foreground italic">
+                  &ldquo;{t('home.messages.sp.message')}&rdquo;
+                </p>
+              </div>
+            </Card>
+            
+            {/* PSI's Card */}
+            <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
+              <img
+                src="https://placehold.co/150x150.png"
+                alt={t('home.messages.psi.name')}
+                className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-primary/50 flex-shrink-0"
+                data-ai-hint="officer portrait"
+              />
+              <div>
+                <h3 className="text-xl font-bold">{t('home.messages.psi.name')}</h3>
+                <p className="text-sm text-primary font-semibold mb-2">{t('home.messages.psi.title')}</p>
+                <p className="text-muted-foreground italic">
+                  &ldquo;{t('home.messages.psi.message')}&rdquo;
+                </p>
+              </div>
+            </Card>
+          </div>
         </div>
       </section>
 
