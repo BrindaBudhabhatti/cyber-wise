@@ -120,7 +120,7 @@ export default function Home() {
             {/* PSI's Card */}
             <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
               <img
-                src="https://ibb.co/XxxgpTBN"
+                src="https://github.com/BrindaBudhabhatti/cyber-wise/blob/9eb87840a8c54acfe4327da37909da4880dfd236/public/Jhala.png"
                 alt={t('home.messages.psi.name')}
                 className="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-4 border-primary/50 flex-shrink-0"
                 data-ai-hint="officer portrait"
