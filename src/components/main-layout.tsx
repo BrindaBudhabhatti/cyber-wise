@@ -24,6 +24,7 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     <SidebarProvider>
       <Sidebar collapsible="icon" variant="sidebar">
         <SidebarHeader>
+          <SidebarTrigger className="md:hidden lg:inline-flex" />   {/* shows a hamburger on mobile, a chevron on desktop */}
           <div className="flex items-center gap-2 p-2">
             <Shield className="h-8 w-8 text-primary" />
             <div className="flex flex-col">
