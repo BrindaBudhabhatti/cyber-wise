@@ -8,6 +8,37 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// src/components/main-layout.tsx
+export function MainLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <SidebarProvider /* ...props you already have */>
+      {/* 1️⃣ tell the sidebar it may collapse to icons */}
+      <Sidebar collapsible="icon" variant="sidebar">
+        {/* 2️⃣ put the Toggle button somewhere visible (top-bar or footer) */}
+        <SidebarHeader>
+          <SidebarTrigger className="md:hidden lg:inline-flex" />   {/* shows a hamburger on mobile, a chevron on desktop */}
+          {/* …your logo etc */}
+        </SidebarHeader>
+
+        {/* 3️⃣ everything else stays the same */}
+        <SidebarContent>
+          <MainNav />
+        </SidebarContent>
+        <SidebarFooter>
+          {/* language, theme switcher, about-dev dialog… */}
+        </SidebarFooter>
+      </Sidebar>
+
+      <SidebarInset>
+        {/* the page content */}
+        <PageTitle />
+        {children}
+        <Footer />
+      </SidebarInset>
+    </SidebarProvider>
+  );
+}
+
 export const metadata: Metadata = {
   title: 'CyberWise',
   description: 'Your guide to cyber safety and Indian cyber laws.',
