@@ -77,6 +77,7 @@ export default function Home() {
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png"/>
+          <br><br>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
