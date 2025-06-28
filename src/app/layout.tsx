@@ -5,6 +5,7 @@ import {Toaster} from '@/components/ui/toaster';
 import { I18nProvider } from '@/components/i18n-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Inter } from 'next/font/google';
+import { ExitIntentDialog } from '@/components/exit-intent-dialog';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,9 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
@@ -38,6 +37,7 @@ export default function RootLayout({
           <I18nProvider>
             <MainLayout>{children}</MainLayout>
             <Toaster />
+            <ExitIntentDialog />
           </I18nProvider>
         </ThemeProvider>
       </body>

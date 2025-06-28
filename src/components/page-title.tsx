@@ -19,6 +19,8 @@ export function PageTitle() {
     { href: '/awareness', labelKey: 'nav.awareness' },
     { href: '/chat', labelKey: 'nav.cyberbuddy' },
     { href: '/threat-analyzer', labelKey: 'nav.threat_analyzer' },
+    { href: '/feedback', labelKey: 'nav.feedback' },
+    { href: '/admin', labelKey: 'nav.admin_feedback' },
   ];
 
   const getPageTitle = () => {
@@ -32,6 +34,9 @@ export function PageTitle() {
         }
         if (item.href === '/games' && pathname !== '/games') {
           return t('nav.games');
+        }
+        if (item.href === '/admin' && pathname.startsWith('/admin')) {
+            return t('nav.admin_feedback');
         }
         return t(item.labelKey);
       }
