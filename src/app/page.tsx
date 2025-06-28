@@ -75,7 +75,7 @@ export default function Home() {
     <div className="space-y-12">
       <section className="text-center py-16">
         <div className="mb-6 flex justify-center text-primary">
-          <img src="https://i.ibb.co/21vL5g8R/image.png"/>
+          <img src="https://i.ibb.co/pNwqC3w/image.png"/>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
