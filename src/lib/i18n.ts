@@ -40,7 +40,7 @@ const resources = {
       "home.features.awareness.description": "Browse our collection of fun and informative posters with a Bollywood twist.",
       "home.features.awareness.link": "View Gallery",
 
-      "home.messages.title": "A Message from Our Leaders",
+      "home.messages.title": "A Message from Our Leader",
       "home.messages.sp.name": "Prem Sukh Delu, IPS",
       "home.messages.sp.title": "Superintendent of Police, Jamnagar",
       "home.messages.sp.message": "In our digital age, awareness is the best shield. CyberWise is a commendable initiative to empower our citizens against online threats. Stay alert, stay safe.",
