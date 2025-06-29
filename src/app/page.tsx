@@ -118,7 +118,7 @@ export default function Home() {
               </div>
             </Card>
             
-            {/* PSI's Card */}
+            {/* PSI's Card
             <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
               <img
                 src="https://i.ibb.co/d44q6y91/Jhala.png"
@@ -133,7 +133,7 @@ export default function Home() {
                   &ldquo;{t('home.messages.psi.message')}&rdquo;
                 </p>
               </div>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>
