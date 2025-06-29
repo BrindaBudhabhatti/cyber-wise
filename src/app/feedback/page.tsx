@@ -24,10 +24,7 @@ export default function FeedbackPage() {
 
       <Card className="w-full max-w-4xl mx-auto overflow-hidden">
         <CardHeader>
-          <CardTitle>{t('feedback_page.form_title')}</CardTitle>
-          <CardDescription>
-            Please fill out the form below. Your responses will be recorded directly in our Google Sheet!
-          </CardDescription>
+          
         </CardHeader>
         <CardContent>
           <div className="w-full" style={{height: '800px'}}>
