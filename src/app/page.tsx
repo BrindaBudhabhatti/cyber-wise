@@ -83,7 +83,8 @@ export default function Home() {
     <div className="space-y-12">
       <section className="relative flex flex-col items-center justify-center text-center min-h-[calc(100vh-8rem)] py-16">
         <div className="mb-6 flex justify-center text-primary">
-          <Shield className="h-16 w-16" />
+          {/* Updated Cyber Crime Logo */}
+          <img src="https://i.ibb.co/MrNntSn/updated-logo.png"/>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
