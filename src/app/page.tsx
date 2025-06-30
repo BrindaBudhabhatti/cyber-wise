@@ -14,6 +14,7 @@ import {
   GalleryHorizontal,
   Shield,
 } from 'lucide-react';
+import { Analytics } from "@vercel/analytics/next"
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
@@ -72,7 +73,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-8">
       <section className="text-center py-16">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
