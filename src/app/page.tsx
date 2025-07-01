@@ -74,8 +74,8 @@ export default function Home() {
 
   return (
     <div className="space-y-5">
-      <div className="flex justify-center mt-6 sm:mt-10 md:mt-2000">
-      </div>
+      <Analytics />
+      
       <section className="text-center py-2">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
@@ -100,11 +100,13 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center mt-6 md:mt-20">
+
+      <div className="flex justify-center mt-6 sm:mt-10 md:mt-20">
         <a href="#features" aria-label="Scroll down">
-            <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
+          <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
         </a>
-      </div>
+      </div> 
+
       <section id="features" className="mt-10 flex justify-center">
 
       </section>
