@@ -108,12 +108,9 @@ export default function Home() {
         </a>
       </div> 
 
-      <section id="features" className="mt-10 flex justify-center">
-        <div className="space-y-5">
+      <section id="features" className="mt-15 flex justify-center">
 
-        </div>
       </section>
-
       <section className="py-12 bg-card">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-10">{t('home.messages.title')}</h2>
