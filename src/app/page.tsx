@@ -77,7 +77,7 @@ export default function Home() {
         <div className="sm:m-35">
           {/* <h1>Test</h1> */}
         </div>
-        <div className="mb-3 flex justify-center text-primary">
+        <div className="mb-3 flex justify-center text-primary md:mt-10">
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="250" height="250"/>
         </div>
