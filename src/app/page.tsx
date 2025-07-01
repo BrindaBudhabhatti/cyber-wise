@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <div className="space-y-5">
-      <section className="text-center py-4">
+      <section className="text-center py-2">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="300" height="300"/>
@@ -101,12 +101,14 @@ export default function Home() {
       <div className="mt-10 flex justify-center">
         <a href="#features" aria-label="Scroll down">
           <ArrowRight
-            className="h-8 w-8 rotate-90 text-primary animate-bounce"
+            className="h-8 w-8 text-primary animate-bounce"
           />
         </a>
       </div>
+      <section id="features" className="mt-10 flex justify-center">
 
-      <section className="py-12 bg-card" id="features">
+      </section>
+      <section className="py-12 bg-card">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-10">{t('home.messages.title')}</h2>
           <div className="grid grid-cols-1 gap-10 max-w-4xl mx-auto">
