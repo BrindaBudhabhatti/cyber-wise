@@ -108,7 +108,7 @@ export default function Home() {
         </a>
       </div> 
 
-      <section id="features" className="mt-10 flex justify-center">
+      <section id="features" className="mt-50 flex justify-center">
 
       </section>
       <section className="py-12 bg-card">
