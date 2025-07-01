@@ -103,7 +103,7 @@ export default function Home() {
 
       <div className="flex justify-center ">
         {/* Scroll Down Arrow */}
-        <div className="m-[2px] sm:m-90"></div>
+        <div className="m-[2px] sm:m-9"></div>
         <a href="#features" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
         </a>
