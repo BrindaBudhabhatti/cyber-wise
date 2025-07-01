@@ -98,7 +98,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="mt-10 flex justify-center">
+      <div className="flex justify-center mt-6 md:mt-20">
         <a href="#features" aria-label="Scroll down">
             <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
         </a>
