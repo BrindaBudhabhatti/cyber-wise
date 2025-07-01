@@ -74,7 +74,7 @@ export default function Home() {
 
   return (
     <div className="space-y-5">
-      <section className="text-center py-16">
+      <section className="text-center py-10">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="300" height="300"/>
