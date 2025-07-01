@@ -75,6 +75,10 @@ export default function Home() {
   return (
     <div className="space-y-5">
     
+    <div className="m-5 sm:m-2">
+      {/* Large: 20px, Small: 8px */}
+      <h1>Test</h1>
+    </div>
       <section className="text-center py-2">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}

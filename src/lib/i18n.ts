@@ -18,7 +18,7 @@ const resources = {
       "home.features.learn.title": "In-Depth Learning",
       "home.features.learn.description": "Explore comprehensive guides on various cybercrimes and Indian laws.",
       "home.features.learn.link": "Explore Topics",
-      "hoame.features.games.title": "Interactive Games",
+      "home.features.games.title": "Interactive Games",
       "home.features.games.description": "Play games like 'Phishing Spotter' to sharpen your cyber-awareness skills.",
       "home.features.games.link": "Play a Game",
       "home.features.chat.title": "AI-Powered Chat",
