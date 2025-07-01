@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <div className="space-y-5">
       <section className="text-center py-2">
-        <div className="m-[5px] sm:m-10">
+        <div className="m-[5px] sm:m-20">
           {/* <h1>Test</h1> */}
         </div>
         <div className="mb-3 flex justify-center text-primary">
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center m-[10px] sm:m-30">
+      <div className="m-[10px] sm:m-30">
         {/* Scroll Down Arrow */}
         <a href="#features" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
