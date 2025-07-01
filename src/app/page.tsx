@@ -77,7 +77,7 @@ export default function Home() {
       <section className="text-center py-2">
         <div className="mb-6 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
-          <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="300" height="300"/>
+          <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="250" height="250"/>
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
@@ -100,8 +100,8 @@ export default function Home() {
 
       <div className="mt-10 flex justify-center">
         <a href="#features" aria-label="Scroll down">
-          <ArrowRight
-            className="h-8 w-8 text-primary animate-bounce"
+          <ArrowDown
+            className="h-8 w-8 rotate-90 text-primary animate-bounce"
           />
         </a>
       </div>
