@@ -81,7 +81,7 @@ export default function Home() {
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="250" height="250"/>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
+        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter md:mt-16">
           {t('home.hero.title1')}{' '}
           <span className="text-primary">{t('home.hero.title2')}</span>
         </h1>
