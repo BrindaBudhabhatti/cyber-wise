@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <div className="space-y-5">
       <section className="text-center py-2">
-        <div className="m-[5px] sm:m-30">
+        <div className="sm:m-40">
           {/* <h1>Test</h1> */}
         </div>
         <div className="mb-3 flex justify-center text-primary">
