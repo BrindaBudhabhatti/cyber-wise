@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="m-[5px] sm:m-40">
+      <div className="m-[5px] sm:m-[100px]">
         {/* Scroll Down Arrow */}
         <div className="flex flex-col items-center justify-center space-y-4">
           <a href="#features" aria-label="Scroll down">
