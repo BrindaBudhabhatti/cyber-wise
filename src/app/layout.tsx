@@ -6,8 +6,12 @@ import { I18nProvider } from '@/components/i18n-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Inter } from 'next/font/google';
 import { ExitIntentDialog } from '@/components/exit-intent-dialog';
-
+import { Analytics } from "@vercel/analytics/next"
 const inter = Inter({ subsets: ['latin'] });
+
+
+<Analytics/>
+
 
 export const metadata: Metadata = {
   title: 'CyberWise',
