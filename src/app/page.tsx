@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center m-[10px] sm:m-30">
+      <div className="m-[10px] sm:m-50">
         {/* Scroll Down Arrow */}
         <a href="#features" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
