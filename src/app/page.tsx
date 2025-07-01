@@ -12,7 +12,7 @@ import {
   Gamepad2,
   ShieldQuestion,
   GalleryHorizontal,
-  Shield,
+  ChevronDown
 } from 'lucide-react';
 import { Analytics } from "@vercel/analytics/next"
 import { useTranslation } from 'react-i18next';
@@ -100,9 +100,7 @@ export default function Home() {
 
       <div className="mt-10 flex justify-center">
         <a href="#features" aria-label="Scroll down">
-          <ArrowDown
-            className="h-8 w-8 rotate-90 text-primary animate-bounce"
-          />
+            <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
         </a>
       </div>
       <section id="features" className="mt-10 flex justify-center">
