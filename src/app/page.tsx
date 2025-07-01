@@ -101,17 +101,17 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center">
         {/* Scroll Down Arrow */}
         <a href="#features" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
         </a>
       </div> 
 
-      <section id="features" className="mt-50 flex justify-center">
+      <section id="features" className="mt-10 flex justify-center">
 
       </section>
-      <section className="py-12 bg-card">
+      <section className="py-17 bg-card">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-center mb-10">{t('home.messages.title')}</h2>
           <div className="grid grid-cols-1 gap-10 max-w-4xl mx-auto">
