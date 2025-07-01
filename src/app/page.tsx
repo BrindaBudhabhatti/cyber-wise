@@ -82,7 +82,7 @@ export default function Home() {
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="250" height="250"/>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter">
+        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
           <span className="text-primary">{t('home.hero.title2')}</span>
         </h1>
@@ -109,7 +109,6 @@ export default function Home() {
       </div> 
 
       <section id="features" className="mt-20 flex justify-center">
-        <h1></h1>
       </section>
       <section className="py-12 bg-card">
         <div className="container mx-auto px-6">
