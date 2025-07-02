@@ -23,13 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-        {/* 1) Replace with the exact ID from your GA “Install manually” panel */}
-        {/* 2) strategy="beforeInteractive" ensures it lands in <head> */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ZMPQKTQS6K"
           strategy="beforeInteractive"
         />
-        <Script id="gtag-init" strategy="beforeInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -37,6 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-ZMPQKTQS6K');
           `}
         </Script>
+
+
       </head>
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
