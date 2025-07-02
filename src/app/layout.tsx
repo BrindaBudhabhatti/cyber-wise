@@ -21,18 +21,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* <!-- Google tag (gtag.js) --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D5K56PLSVB"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-          gtag('config', 'G-D5K56PLSVB');
-        </script>
-
-      
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />        
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D5K56PLSVB"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-D5K56PLSVB');
+          `}
+        </Script>
+        
 
       </head>
       <body className={`${inter.className} antialiased`}>
