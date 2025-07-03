@@ -18,8 +18,11 @@ export function PageTitle() {
     { href: '/report', labelKey: 'nav.report' },
     { href: '/awareness', labelKey: 'nav.awareness' },
     { href: '/chat', labelKey: 'nav.cyberbuddy' },
-    { href: '/threat-analyzer', labelKey: 'nav.threat_analyzer' },
+    { href: '/scam-scanner', labelKey: 'nav.scam_scanner' },
+    { href: '/link-inspector', labelKey: 'nav.link_inspector' },
+    { href: '/breach-checker', labelKey: 'nav.breach_checker' },
     { href: '/feedback', labelKey: 'nav.feedback' },
+    { href: '/reach-us', labelKey: 'nav.reach_us' },
     { href: '/admin', labelKey: 'nav.admin_feedback' },
   ];
 
@@ -46,3 +49,5 @@ export function PageTitle() {
 
   return <h2 className="text-lg font-semibold md:text-xl">{getPageTitle()}</h2>;
 }
+
+    

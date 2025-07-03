@@ -12,7 +12,8 @@ import {
   Gamepad2,
   ShieldQuestion,
   GalleryHorizontal,
-  ChevronDown
+  ChevronDown,
+  Link2
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -56,11 +57,18 @@ export default function Home() {
       linkKey: 'home.features.games.link',
     },
     {
-      href: '/threat-analyzer',
+      href: '/scam-scanner',
       icon: ScanLine,
-      titleKey: 'home.features.analyzer.title',
-      descriptionKey: 'home.features.analyzer.description',
-      linkKey: 'home.features.analyzer.link',
+      titleKey: 'home.features.scam_scanner.title',
+      descriptionKey: 'home.features.scam_scanner.description',
+      linkKey: 'home.features.scam_scanner.link',
+    },
+    {
+      href: '/link-inspector',
+      icon: Link2,
+      titleKey: 'home.features.link_inspector.title',
+      descriptionKey: 'home.features.link_inspector.description',
+      linkKey: 'home.features.link_inspector.link',
     },
     {
       href: '/awareness',
@@ -77,11 +85,11 @@ export default function Home() {
         <div className="sm:m-35">
           {/* <h1>Test</h1> */}
         </div>
-        <div className="mb-3 flex justify-center text-primary md:mt-10">
+        <div className="mb-3 flex justify-center text-primary">
           {/* Updated Cyber Crime Logo */}
           <img src="https://i.ibb.co/MrNntSn/updated-logo.png" width="250" height="250"/>
         </div>
-        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter md:mt-16">
+        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tighter">
           {t('home.hero.title1')}{' '}
           <span className="text-primary">{t('home.hero.title2')}</span>
         </h1>
@@ -100,7 +108,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="flex justify-center mt-0 md:mt-30 lg:mt-40">
+      <div className="flex justify-center mt-0 md:mt-10 lg:mt-20">
         {/* Scroll Down Arrow */}
         <a href="#features" aria-label="Scroll down">
           <ChevronDown className="h-8 w-8 text-primary animate-bounce" />
