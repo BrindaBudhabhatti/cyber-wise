@@ -40,18 +40,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${inter.className} antialiased`}>
         <canvas id="binaryCanvas"></canvas>
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        >
+        > */}
           <I18nProvider>
             <MainLayout>{children}</MainLayout>
             <Toaster />
             <ExitIntentDialog />
           </I18nProvider>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )
