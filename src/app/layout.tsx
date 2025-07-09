@@ -39,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       </head>
       <body className={`${inter.className} antialiased`}>
+        <canvas id="binaryCanvas"></canvas>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
