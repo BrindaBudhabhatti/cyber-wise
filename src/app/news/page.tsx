@@ -108,7 +108,7 @@ export default function NewsPage() {
                   <CardHeader>
                     <CardTitle>{article.title}</CardTitle>
                     <CardDescription>
-                      {article.source} - {article.publishedDate}
+                      {article.source}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
