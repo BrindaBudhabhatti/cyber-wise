@@ -1,4 +1,5 @@
-import { Fish, KeyRound, UserX, ShieldAlert, IndianRupee, Lock, Users, Bug, type LucideIcon } from "lucide-react";
+
+import { Fish, KeyRound, UserX, ShieldAlert, IndianRupee, Lock, Users, Bug, type LucideIcon, FileText, GitCommit, Gamepad2, UserRoundX } from "lucide-react";
 
 export type Topic = {
   slug: string;
@@ -58,6 +59,51 @@ export const topics: Topic[] = [
       "learn.cyber_bullying.tip5",
     ],
   },
+   {
+    slug: "cyberstalking",
+    titleKey: "learn.cyberstalking.title",
+    summaryKey: "learn.cyberstalking.summary",
+    icon: UserX,
+    descriptionKey: "learn.cyberstalking.description",
+    lawKey: "learn.cyberstalking.law",
+    penaltyKey: "learn.cyberstalking.penalty",
+    tipsKeys: [
+      "learn.cyberstalking.tip1",
+      "learn.cyberstalking.tip2",
+      "learn.cyberstalking.tip3",
+      "learn.cyberstalking.tip4",
+    ],
+  },
+  {
+    slug: "photo-morphing",
+    titleKey: "learn.photo_morphing.title",
+    summaryKey: "learn.photo_morphing.summary",
+    icon: GitCommit,
+    descriptionKey: "learn.photo_morphing.description",
+    lawKey: "learn.photo_morphing.law",
+    penaltyKey: "learn.photo_morphing.penalty",
+    tipsKeys: [
+      "learn.photo_morphing.tip1",
+      "learn.photo_morphing.tip2",
+      "learn.photo_morphing.tip3",
+      "learn.photo_morphing.tip4",
+    ],
+  },
+   {
+    slug: "doxxing",
+    titleKey: "learn.doxxing.title",
+    summaryKey: "learn.doxxing.summary",
+    icon: FileText,
+    descriptionKey: "learn.doxxing.description",
+    lawKey: "learn.doxxing.law",
+    penaltyKey: "learn.doxxing.penalty",
+    tipsKeys: [
+      "learn.doxxing.tip1",
+      "learn.doxxing.tip2",
+      "learn.doxxing.tip3",
+      "learn.doxxing.tip4",
+    ],
+  },
   {
     slug: "identity-theft",
     titleKey: "learn.identity_theft.title",
@@ -86,6 +132,36 @@ export const topics: Topic[] = [
         "learn.online_scams.tip2",
         "learn.online_scams.tip3",
         "learn.online_scams.tip4",
+    ],
+  },
+  {
+    slug: "online-predators",
+    titleKey: "learn.online_predators.title",
+    summaryKey: "learn.online_predators.summary",
+    icon: UserRoundX,
+    descriptionKey: "learn.online_predators.description",
+    lawKey: "learn.online_predators.law",
+    penaltyKey: "learn.online_predators.penalty",
+    tipsKeys: [
+      "learn.online_predators.tip1",
+      "learn.online_predators.tip2",
+      "learn.online_predators.tip3",
+      "learn.online_predators.tip4",
+    ],
+  },
+  {
+    slug: "gaming-scams",
+    titleKey: "learn.gaming_scams.title",
+    summaryKey: "learn.gaming_scams.summary",
+    icon: Gamepad2,
+    descriptionKey: "learn.gaming_scams.description",
+    lawKey: "learn.gaming_scams.law",
+    penaltyKey: "learn.gaming_scams.penalty",
+    tipsKeys: [
+      "learn.gaming_scams.tip1",
+      "learn.gaming_scams.tip2",
+      "learn.gaming_scams.tip3",
+      "learn.gaming_scams.tip4",
     ],
   },
   {

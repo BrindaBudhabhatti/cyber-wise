@@ -24,6 +24,8 @@ export function PageTitle() {
     { href: '/feedback', labelKey: 'nav.feedback' },
     { href: '/reach-us', labelKey: 'nav.reach_us' },
     { href: '/admin', labelKey: 'nav.admin_feedback' },
+    { href: '/womens-safety', labelKey: 'nav.womens_safety' },
+    { href: '/cyberwise-kids', labelKey: 'nav.cyberwise_kids' },
   ];
 
   const getPageTitle = () => {

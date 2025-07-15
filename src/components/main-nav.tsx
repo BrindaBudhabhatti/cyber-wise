@@ -16,6 +16,8 @@ import {
   Phone,
   ShieldX,
   Link2,
+  HeartHandshake,
+  Backpack
 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -35,6 +37,8 @@ export function MainNav() {
   const menuItems = [
     { href: '/', labelKey: 'nav.home', icon: Home },
     { href: '/learn', labelKey: 'nav.learn', icon: BookOpen },
+    { href: '/womens-safety', labelKey: 'nav.womens_safety', icon: HeartHandshake },
+    { href: '/cyberwise-kids', labelKey: 'nav.cyberwise_kids', icon: Backpack },
     { href: '/news', labelKey: 'nav.news', icon: Newspaper },
     { href: '/stats', labelKey: 'nav.stats', icon: BarChart },
     { href: '/quiz', labelKey: 'nav.quiz', icon: ShieldQuestion },
