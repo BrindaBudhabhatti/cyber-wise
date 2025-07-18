@@ -22,10 +22,10 @@ export default function DigitalRain() {
       const isDark = document.documentElement.classList.contains('dark');
 
       // Background fade effect
-      ctx.fillStyle = isDark ? '#080414' : 'rgba(255, 255, 255, 0.05)';
+      ctx.fillStyle = isDark ? '#08041416' : 'rgba(255, 255, 255, 0.05)';
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = isDark ? '#99ff99' : '#d9d9d9'; // Text color
+      ctx.fillStyle = isDark ? '#036b6ba9' : '#d9d9d9'; // Text color
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
