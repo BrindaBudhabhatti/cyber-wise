@@ -48,15 +48,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <I18nProvider>
-            <MainLayout>{children}</MainLayout>
+            <MainLayout>
+              <main className="relative z-10">{children}</main>
+            </MainLayout>
             <Toaster />
             <ExitIntentDialog />
           </I18nProvider>
         </ThemeProvider>
           <body className="relative bg-transparent text-foreground">
             <DigitalRain />
-            <main className="relative z-10">{children}</main>
-          </body>
+            {/* <main className="relative z-10">{children}</main> */}
+            
       </body>
     </html>
   )
