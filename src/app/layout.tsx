@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Inter } from 'next/font/google'
 import { ExitIntentDialog } from '@/components/exit-intent-dialog'
 import Script from 'next/script'
+import DigitalRain from '@/components/DigitalRain' // ✅ Import here
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-D5K56PLSVB"
           strategy="beforeInteractive"
@@ -35,10 +35,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-D5K56PLSVB');
           `}
         </Script>
-        
-
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased relative bg-transparent`}>
+        {/* ✅ Matrix Background Canvas */}
+        <DigitalRain />
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -46,7 +47,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <I18nProvider>
-            <MainLayout>{children}</MainLayout>
+            <MainLayout>
+              <div className="relative z-10">{children}</div>
+            </MainLayout>
             <Toaster />
             <ExitIntentDialog />
           </I18nProvider>
