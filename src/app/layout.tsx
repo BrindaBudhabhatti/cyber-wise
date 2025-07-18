@@ -40,9 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         
 
       </head>
-      <body className={`${inter.className} antialiased relative bg-transparent text-foreground`}>
-            <DigitalRain />
-            
+      <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -55,7 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ExitIntentDialog />
           </I18nProvider>
         </ThemeProvider>
-          
+          <body className="relative bg-transparent text-foreground">
+            <DigitalRain />
+            <main className="relative z-10">{children}</main>
+          </body>
       </body>
     </html>
   )
