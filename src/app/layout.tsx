@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <body className="relative bg-transparent text-foreground">
             <DigitalRain />
             {/* <main className="relative z-10">{children}</main> */}
-            
+          </body>
       </body>
     </html>
   )
