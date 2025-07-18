@@ -38,7 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
 
       {/* ✅ Only ONE body tag */}
-      <body className={`${inter.className} antialiased relative bg-transparent`}>
+      <body>
         {/* ✅ Background Canvas: Matrix-style Digital Rain */}
         <DigitalRain />
 
