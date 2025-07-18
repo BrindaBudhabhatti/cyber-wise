@@ -8,6 +8,8 @@ import { ThemeProvider } from '@/components/theme-provider'
 import { Inter } from 'next/font/google'
 import { ExitIntentDialog } from '@/components/exit-intent-dialog'
 import Script from 'next/script'
+import DigitalRain from '@/components/DigitalRain';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -51,12 +53,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <ExitIntentDialog />
           </I18nProvider>
         </ThemeProvider>
-        <html lang="en" className="dark">
           <body className="relative bg-transparent text-foreground">
             <DigitalRain />
             <main className="relative z-10">{children}</main>
           </body>
-        </html>
       </body>
     </html>
   )
