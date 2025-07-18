@@ -25,7 +25,7 @@ export default function DigitalRain() {
       ctx.fillStyle = isDark ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.05)';
       ctx.fillRect(0, 0, width, height);
 
-      ctx.fillStyle = isDark ? '#00FF00' : '#555'; // Text color
+      ctx.fillStyle = isDark ? '#99ff99' : '#d9d9d9'; // Text color
       ctx.font = `${fontSize}px monospace`;
 
       for (let i = 0; i < drops.length; i++) {
