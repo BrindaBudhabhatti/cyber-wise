@@ -120,7 +120,7 @@ export default function Home() {
       </section>
       <section className="py-12 bg-card">
         <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-10">{t('home.messages.title')}</h2>
+          <h2 className="text-3xl font-bold text-center mb-10">{t('home.message.title')}</h2>
           <div className="grid grid-cols-1 gap-10 max-w-4xl mx-auto">
             {/* SP's Card */}
             <Card className="flex flex-col sm:flex-row items-center gap-6 p-6 text-left shadow-lg hover:shadow-primary/20 transition-shadow">
