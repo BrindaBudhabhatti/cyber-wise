@@ -1,84 +1,77 @@
-// app/admin/kids-stories/page.tsx
+
 'use client';
 
 import { useEffect, useState } from 'react';
-import { createClient } from '@/lib/supabase-client';
-import { Button } from '@/components/ui/button';
+import { getKidsStories, addKidsStory, KidsStory } from '@/lib/data-service';
 import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
-export default function AdminKidsStoriesPage() {
-  const supabase = createClient();
-  const [title, setTitle] = useState('');
-  const [ageGroup, setAgeGroup] = useState('4-7');
-  const [storyText, setStoryText] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [language, setLanguage] = useState('en');
-  const [loading, setLoading] = useState(false);
+export default function AdminCyberWiseKidsPage() {
+  const [stories, setStories] = useState<KidsStory[]>([]);
+  const [newStory, setNewStory] = useState({
+    titleKey: '',
+    storyKey: '',
+    age_group: '4-7',
+  });
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setLoading(true);
-
-    const { error } = await supabase.from('kids_stories').insert([
-      {
-        title,
-        age_group: ageGroup,
-        story_text: storyText,
-        image_url: imageUrl,
-        language
-      }
-    ]);
-
-    if (error) {
-      alert('Error: ' + error.message);
-    } else {
-      alert('Story submitted successfully!');
-      setTitle('');
-      setAgeGroup('4-7');
-      setStoryText('');
-      setImageUrl('');
-      setLanguage('en');
+  useEffect(() => {
+    async function fetchStories() {
+      const data = await getKidsStories();
+      setStories(data);
     }
+    fetchStories();
+  }, []);
 
-    setLoading(false);
-  }
+  const handleAdd = async () => {
+    if (!newStory.titleKey || !newStory.storyKey) return;
+    await addKidsStory(newStory);
+    const updated = await getKidsStories();
+    setStories(updated);
+    setNewStory({ titleKey: '', storyKey: '', age_group: '4-7' });
+  };
 
   return (
-    <div className="max-w-xl mx-auto py-10">
-      <h1 className="text-2xl font-bold mb-4">Add New CyberWise Kids Story</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <Label>Title</Label>
-          <Input value={title} onChange={(e) => setTitle(e.target.value)} required />
-        </div>
-        <div>
-          <Label>Age Group</Label>
-          <Select value={ageGroup} onValueChange={setAgeGroup}>
-            <SelectTrigger><SelectValue /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="4-7">4–7</SelectItem>
-              <SelectItem value="8-12">8–12</SelectItem>
-              <SelectItem value="12-17">12–17</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div>
-          <Label>Story Text</Label>
-          <Textarea value={storyText} onChange={(e) => setStoryText(e.target.value)} required rows={6} />
-        </div>
-        <div>
-          <Label>Image URL (optional)</Label>
-          <Input value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
-        </div>
-        <div>
-          <Label>Language</Label>
-          <Input value={language} onChange={(e) => setLanguage(e.target.value)} required />
-        </div>
-        <Button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit Story'}</Button>
-      </form>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-4">Manage Kids' Stories</h1>
+      <div className="mb-6">
+        <Input
+          placeholder="Title Key"
+          value={newStory.titleKey}
+          onChange={(e) => setNewStory({ ...newStory, titleKey: e.target.value })}
+          className="mb-2"
+        />
+        <Input
+          placeholder="Story Key"
+          value={newStory.storyKey}
+          onChange={(e) => setNewStory({ ...newStory, storyKey: e.target.value })}
+          className="mb-2"
+        />
+        <select
+          value={newStory.age_group}
+          onChange={(e) => setNewStory({ ...newStory, age_group: e.target.value })}
+          className="mb-2 p-2 border rounded"
+        >
+          <option value="4-7">4–7</option>
+          <option value="8-12">8–12</option>
+          <option value="13-17">13–17</option>
+        </select>
+        <Button onClick={handleAdd}>Add Story</Button>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {stories.map((story) => (
+          <Card key={story.id}>
+            <CardHeader>
+              <CardTitle>{story.titleKey}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>{story.storyKey}</p>
+              <p className="text-sm text-muted-foreground">Age Group: {story.age_group}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

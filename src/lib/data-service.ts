@@ -161,3 +161,54 @@ export async function deleteVictimTestimonial(id: string) {
     }
     return;
 }
+
+
+// ========== CyberWise Kids Stories ==========
+export interface KidsStory {
+  id?: string;
+  age_group: number;
+  title_key: string;
+  story_key: string;
+  lesson_key: string;
+  image_url?: string;
+  created_at?: string;
+}
+
+export async function getKidsStories(): Promise<KidsStory[]> {
+  const { data, error } = await supabase
+    .from('kids_stories')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Error fetching kids stories:', error);
+    return [];
+  }
+  return data as KidsStory[];
+}
+
+export async function addKidsStory(data: Omit<KidsStory, 'id' | 'created_at'>) {
+  const { data: newStory, error } = await supabase
+    .from('kids_stories')
+    .insert([data])
+    .select()
+    .single();
+
+  if (error) {
+    console.error('Error adding kids story:', error);
+    return null;
+  }
+  return newStory;
+}
+
+export async function deleteKidsStory(id: string) {
+  const { error } = await supabase
+    .from('kids_stories')
+    .delete()
+    .eq('id', id);
+
+  if (error) {
+    console.error('Error deleting kids story:', error);
+  }
+  return;
+}
