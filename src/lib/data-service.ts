@@ -1,185 +1,95 @@
 
-'use server';
-
 import { createClient } from './supabase-client';
+import type { SolvedCase as FirestoreSolvedCase, VictimTestimonial as FirestoreVictimTestimonial, KidStory as FirestoreKidStory } from './firestore-service';
 
-export interface SolvedCase {
-    id?: string;
-    titleKey: string;
-    year: number;
-    summaryKey: string;
-    toolsUsed: string[];
-    outcomeKey: string;
-    tags: string[];
-}
-
-export interface VictimTestimonial {
-    id?: string;
-    aliasKey: string;
-    storyKey: string;
-    helpKey: string;
-    messageKey: string;
-}
-
-export interface KidStory {
-    id?: string;
-    title_key: string;
-    description_key: string;
-    content_key: string;
-    age_group: string;
-    topic: string;
-    image_url?: string;
-}
+// Re-exporting types with Supabase compatibility (optional ID)
+export type SolvedCase = FirestoreSolvedCase;
+export type VictimTestimonial = FirestoreVictimTestimonial;
+export type KidStory = FirestoreKidStory;
 
 
-const supabase = createClient();
-
-// Functions for Solved Cases
+// Solved Cases Functions
 export async function getSolvedCases(): Promise<SolvedCase[]> {
-    const { data, error } = await supabase
-        .from('cases')
-        .select('*')
-        .order('year', { ascending: false });
-
-    if (error) {
-        console.error('Error fetching cases:', error);
-        return [];
-    }
-    return data as SolvedCase[];
+  const supabase = createClient();
+  const { data, error } = await supabase.from('solved_cases').select('*');
+  if (error) {
+    console.error('Error fetching solved cases:', error);
+    return [];
+  }
+  return data as SolvedCase[];
 }
 
 export async function getSolvedCase(id: string): Promise<SolvedCase | null> {
-    const { data, error } = await supabase
-        .from('cases')
-        .select('*')
-        .eq('id', id)
-        .single();
-
+    const supabase = createClient();
+    const { data, error } = await supabase.from('solved_cases').select('*').eq('id', id).single();
     if (error) {
-        console.error('Error fetching case:', error);
+        console.error('Error fetching single solved case:', error);
         return null;
     }
-    return data as SolvedCase;
+    return data as SolvedCase | null;
 }
 
-export async function addSolvedCase(data: Omit<SolvedCase, 'id'>) {
-    const { data: newCase, error } = await supabase
-        .from('cases')
-        .insert([data])
-        .select()
-        .single();
-
-    if (error) {
-        console.error('Error adding case:', error);
-        return null;
-    }
-    return newCase;
+export async function addSolvedCase(caseData: Omit<SolvedCase, 'id'>) {
+  const supabase = createClient();
+  const { error } = await supabase.from('solved_cases').insert([caseData]);
+  if (error) throw new Error(error.message);
 }
 
-export async function updateSolvedCase(id: string, data: Partial<SolvedCase>) {
-    const { data: updatedCase, error } = await supabase
-        .from('cases')
-        .update(data)
-        .eq('id', id)
-        .select()
-        .single();
-
-    if (error) {
-        console.error('Error updating case:', error);
-        return null;
-    }
-    return updatedCase;
+export async function updateSolvedCase(id: string, caseData: Partial<Omit<SolvedCase, 'id'>>) {
+  const supabase = createClient();
+  const { error } = await supabase.from('solved_cases').update(caseData).eq('id', id);
+  if (error) throw new Error(error.message);
 }
 
 export async function deleteSolvedCase(id: string) {
-    const { error } = await supabase
-        .from('cases')
-        .delete()
-        .eq('id', id);
-
-    if (error) {
-        console.error('Error deleting case:', error);
-    }
-    return;
+  const supabase = createClient();
+  const { error } = await supabase.from('solved_cases').delete().eq('id', id);
+  if (error) throw new Error(error.message);
 }
 
-
-// Functions for Victim Testimonials
+// Victim Testimonials Functions
 export async function getVictimTestimonials(): Promise<VictimTestimonial[]> {
-     const { data, error } = await supabase
-        .from('testimonials')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-    if (error) {
-        console.error('Error fetching testimonials:', error);
-        return [];
-    }
-    return data as VictimTestimonial[];
+  const supabase = createClient();
+  const { data, error } = await supabase.from('victim_testimonials').select('*');
+  if (error) {
+    console.error('Error fetching testimonials:', error);
+    return [];
+  }
+  return data as VictimTestimonial[];
 }
 
 export async function getVictimTestimonial(id: string): Promise<VictimTestimonial | null> {
-    const { data, error } = await supabase
-        .from('testimonials')
-        .select('*')
-        .eq('id', id)
-        .single();
-
+    const supabase = createClient();
+    const { data, error } = await supabase.from('victim_testimonials').select('*').eq('id', id).single();
     if (error) {
-        console.error('Error fetching testimonial:', error);
+        console.error('Error fetching single testimonial:', error);
         return null;
     }
-    return data as VictimTestimonial;
+    return data as VictimTestimonial | null;
 }
 
-export async function addVictimTestimonial(data: Omit<VictimTestimonial, 'id'>) {
-    const { data: newTestimonial, error } = await supabase
-        .from('testimonials')
-        .insert([data])
-        .select()
-        .single();
-    
-    if (error) {
-        console.error('Error adding testimonial:', error);
-        return null;
-    }
-    return newTestimonial;
+export async function addVictimTestimonial(testimonialData: Omit<VictimTestimonial, 'id'>) {
+  const supabase = createClient();
+  const { error } = await supabase.from('victim_testimonials').insert([testimonialData]);
+  if (error) throw new Error(error.message);
 }
 
-export async function updateVictimTestimonial(id: string, data: Partial<VictimTestimonial>) {
-    const { data: updatedTestimonial, error } = await supabase
-        .from('testimonials')
-        .update(data)
-        .eq('id', id)
-        .select()
-        .single();
-
-    if (error) {
-        console.error('Error updating testimonial:', error);
-        return null;
-    }
-    return updatedTestimonial;
+export async function updateVictimTestimonial(id: string, testimonialData: Partial<Omit<VictimTestimonial, 'id'>>) {
+  const supabase = createClient();
+  const { error } = await supabase.from('victim_testimonials').update(testimonialData).eq('id', id);
+  if (error) throw new Error(error.message);
 }
 
 export async function deleteVictimTestimonial(id: string) {
-    const { error } = await supabase
-        .from('testimonials')
-        .delete()
-        .eq('id', id);
-        
-    if (error) {
-        console.error('Error deleting testimonial:', error);
-    }
-    return;
+  const supabase = createClient();
+  const { error } = await supabase.from('victim_testimonials').delete().eq('id', id);
+  if (error) throw new Error(error.message);
 }
 
-// Functions for CyberWise Kids Stories
+// Kid Stories Functions
 export async function getKidStories(): Promise<KidStory[]> {
-    const { data, error } = await supabase
-        .from('kid_stories')
-        .select('*')
-        .order('created_at', { ascending: false });
-
+    const supabase = createClient();
+    const { data, error } = await supabase.from('kid_stories').select('*');
     if (error) {
         console.error('Error fetching kid stories:', error);
         return [];
@@ -188,56 +98,29 @@ export async function getKidStories(): Promise<KidStory[]> {
 }
 
 export async function getKidStory(id: string): Promise<KidStory | null> {
-    const { data, error } = await supabase
-        .from('kid_stories')
-        .select('*')
-        .eq('id', id)
-        .single();
-
+    const supabase = createClient();
+    const { data, error } = await supabase.from('kid_stories').select('*').eq('id', id).single();
     if (error) {
-        console.error('Error fetching kid story:', error);
+        console.error('Error fetching single kid story:', error);
         return null;
     }
-    return data as KidStory;
+    return data as KidStory | null;
 }
 
-export async function addKidStory(data: Omit<KidStory, 'id'>) {
-    const { data: newStory, error } = await supabase
-        .from('kid_stories')
-        .insert([data])
-        .select()
-        .single();
-
-    if (error) {
-        console.error('Error adding kid story:', error);
-        return null;
-    }
-    return newStory;
+export async function addKidStory(storyData: Omit<KidStory, 'id'>) {
+    const supabase = createClient();
+    const { error } = await supabase.from('kid_stories').insert([storyData]);
+    if (error) throw new Error(error.message);
 }
 
-export async function updateKidStory(id: string, data: Partial<KidStory>) {
-    const { data: updatedStory, error } = await supabase
-        .from('kid_stories')
-        .update(data)
-        .eq('id', id)
-        .select()
-        .single();
-
-    if (error) {
-        console.error('Error updating kid story:', error);
-        return null;
-    }
-    return updatedStory;
+export async function updateKidStory(id: string, storyData: Partial<Omit<KidStory, 'id'>>) {
+    const supabase = createClient();
+    const { error } = await supabase.from('kid_stories').update(storyData).eq('id', id);
+    if (error) throw new Error(error.message);
 }
 
 export async function deleteKidStory(id: string) {
-    const { error } = await supabase
-        .from('kid_stories')
-        .delete()
-        .eq('id', id);
-
-    if (error) {
-        console.error('Error deleting kid story:', error);
-    }
-    return;
+    const supabase = createClient();
+    const { error } = await supabase.from('kid_stories').delete().eq('id', id);
+    if (error) throw new Error(error.message);
 }
