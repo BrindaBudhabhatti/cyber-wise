@@ -89,7 +89,7 @@ export async function deleteVictimTestimonial(id: string) {
 // Kid Stories Functions
 export async function getKidStories(): Promise<KidStory[]> {
     const supabase = createClient();
-    const { data, error } = await supabase.from('kid_stories').select('*');
+    const { data, error } = await supabase.from('kid_stories').select('*', { cache: 'no-store' });
     if (error) {
         console.error('Error fetching kid stories:', error);
         return [];
@@ -99,7 +99,7 @@ export async function getKidStories(): Promise<KidStory[]> {
 
 export async function getKidStory(id: string): Promise<KidStory | null> {
     const supabase = createClient();
-    const { data, error } = await supabase.from('kid_stories').select('*').eq('id', id).single();
+    const { data, error } = await supabase.from('kid_stories').select('*', { cache: 'no-store' }).eq('id', id).single();
     if (error) {
         console.error('Error fetching single kid story:', error);
         return null;
